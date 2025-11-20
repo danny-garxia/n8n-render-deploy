@@ -1,15 +1,11 @@
 {
-  "name": "n8n-crm",
+  "name": "n8n-deploy",
   "version": "1.0.0",
-  "description": "AI CRM n8n on Render",
+  "description": "Deploy n8n on Render",
   "scripts": {
-    "start": "npx n8n start",
-    "dev": "npx n8n dev"
+    "start": "npx n8n start --tunnel"
   },
   "dependencies": {
     "n8n": "latest"
-  },
-  "engines": {
-    "node": ">=18.0.0"
   }
 }
