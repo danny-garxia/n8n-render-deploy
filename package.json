@@ -1,9 +1,12 @@
 {
   "name": "n8n-deploy",
   "version": "1.0.0",
-  "description": "Deploy n8n on Render",
+  "description": "Deploy n8n on Render with Node 20.19.5",
+  "engines": {
+    "node": "20.19.5"
+  },
   "scripts": {
-    "start": "npx n8n start --tunnel"
+    "start": "npx n8n start"
   },
   "dependencies": {
     "n8n": "latest"
