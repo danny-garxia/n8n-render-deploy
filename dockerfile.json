@@ -1,0 +1,15 @@
+{
+  "name": "n8n-crm",
+  "version": "1.0.0",
+  "description": "AI CRM n8n on Render",
+  "scripts": {
+    "start": "npx n8n start",
+    "dev": "npx n8n dev"
+  },
+  "dependencies": {
+    "n8n": "latest"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
