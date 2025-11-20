@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: n8n
+    env: docker
+    region: oregon
+    plan: free              # change to starter ($7/mo) later when you want no sleep
+    autoDeploy: true
+    envVars:
+      - key: N8N_HOST
+        value: ${{render.services[0].url}}
+      - key: N8N_PORT
+        value: 5678
+      - key: N8N_PROTOCOL
+        value: https
+      - key: WEBHOOK_URL
+        value: https://${{render.services[0].url}}/
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: true
+      - key: N8N_BASIC_AUTH_USER
+        value: danny                 # change this to whatever username you want
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: YourSuperStrongPass123!   # CHANGE THIS to a strong password
+      - key: EXECUTIONS_MODE
+        value: queue
+      - key: N8N_ENCRYPTION_KEY
+        generateValue: true          # auto-generates a secure key every deploy
+
+databases:
+  - name: n8n-postgres
+    plan: free
+    region: oregon
